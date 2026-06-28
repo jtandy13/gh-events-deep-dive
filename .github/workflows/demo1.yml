@@ -48,6 +48,7 @@ jobs:
       - name: Output contents
         run: ls
       - name: Output script file name
-        run: echo "Script file name: ${{ needs.build.outputs.script-file }}"
+        run: | 
+          echo "Script file name: ${{ needs.build.outputs.script-file }}" >> $GITHUB_OUTPUT
       - name: Deploy project
         run: echo "Deploying..."
